@@ -4,7 +4,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 
 
-class PythonModuleTest(unittest.TestCase):
+class Far2l HistoryTest(unittest.TestCase):
 
     def test_initial(self):
         pass

@@ -58,7 +58,7 @@ setup(
     version=VERSION,
     author="Yurii Cherkasov",
     author_email="strategarius@protonmail.com",
-    description=None,
+    description="History editor (CLI and GUI) for Far file manager",
     long_description=README,
     long_description_content_type="text/markdown",
     url=GITHUB_URL,
