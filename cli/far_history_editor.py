@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-farhistory: Comprehensive CLI for Far2l history export/import.
+far_history_editor.py: Comprehensive CLI for Far2l history export/import.
 
 Usage examples:
   # Export HST -> JSON (auto-detect header)
-  farhistory export ~/.config/far2l/history/commands.hst commands.json --pretty
+  far_history_editor.py export ~/.config/far2l/history/commands.hst commands.json --pretty
 
   # Import JSON -> HST (header inferred from JSON["Header"])
-  farhistory import commands.json ~/.config/far2l/history/commands.hst
+  far_history_editor.py import commands.json ~/.config/far2l/history/commands.hst
 
   # Work with stdin/stdout
-  farhistory export ~/.config/far2l/history/folders.hst - --pretty | jq .HistoryCount
-  farhistory import - out.hst < edited.json
+  far_history_editor.py export ~/.config/far2l/history/folders.hst - --pretty | jq .HistoryCount
+  far_history_editor.py import - out.hst < edited.json
 
 Exit codes:
-  0  success
-  1  usage/argument error
-  2  parse/serialization error
+  0 success
+  1 usage/argument error
+  2 parse/serialization error
 """
 from __future__ import annotations
 
@@ -88,13 +88,13 @@ def cmd_export(args: argparse.Namespace) -> int:
         _write_json(args.json_out, data, pretty=args.pretty, ensure_ascii=not args.no_ascii)
         return 0
     except (UnknownHeaderError, ParseError) as e:
-        sys.stderr.write(f"[farhistory] export error: {e}\n")
+        sys.stderr.write(f"[far_history_editor.py] export error: {e}\n")
         return 2
     except FileNotFoundError as e:
-        sys.stderr.write(f"[farhistory] file not found: {e}\n")
+        sys.stderr.write(f"[far_history_editor.py] file not found: {e}\n")
         return 1
     except Exception as e:
-        sys.stderr.write(f"[farhistory] unexpected error: {e}\n")
+        sys.stderr.write(f"[far_history_editor.py] unexpected error: {e}\n")
         return 2
 
 
@@ -112,30 +112,30 @@ def cmd_import(args: argparse.Namespace) -> int:
         _write_text(args.hst_out, hst_text)
         return 0
     except (UnknownHeaderError, SchemaError, RoundtripError, ParseError) as e:
-        sys.stderr.write(f"[farhistory] import error: {e}\n")
+        sys.stderr.write(f"[far_history_editor.py] import error: {e}\n")
         return 2
     except FileNotFoundError as e:
-        sys.stderr.write(f"[farhistory] file not found: {e}\n")
+        sys.stderr.write(f"[far_history_editor.py] file not found: {e}\n")
         return 1
     except json.JSONDecodeError as e:
-        sys.stderr.write(f"[farhistory] invalid JSON: {e}\n")
+        sys.stderr.write(f"[far_history_editor.py] invalid JSON: {e}\n")
         return 2
     except Exception as e:
-        sys.stderr.write(f"[farhistory] unexpected error: {e}\n")
+        sys.stderr.write(f"[far_history_editor.py] unexpected error: {e}\n")
         return 2
 
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        prog="farhistory",
+        prog="far_history_editor.py",
         description="Far2l history export/import tool",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Examples:\n"
-            "  farhistory export ~/.config/far2l/history/commands.hst commands.json --pretty\n"
-            "  farhistory import commands.json ~/.config/far2l/history/commands.hst\n"
-            "  farhistory export in.hst - | jq .\n"
-            "  farhistory import - out.hst < edited.json\n"
+            "  far_history_editor.py export ~/.config/far2l/history/commands.hst commands.json --pretty\n"
+            "  far_history_editor.py import commands.json ~/.config/far2l/history/commands.hst\n"
+            "  far_history_editor.py export in.hst - | jq .\n"
+            "  far_history_editor.py import - out.hst < edited.json\n"
         ),
     )
     sub = p.add_subparsers(dest="cmd", required=True)
