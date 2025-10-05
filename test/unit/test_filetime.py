@@ -5,7 +5,7 @@ Expected: conversions retain value and timestamps are reasonable.
 """
 import datetime
 
-from far2l_history.core.filetime import (
+from far_history_toolset.core.filetime import (
     FILETIME_EPOCH,
     filetime_hex_to_int_le,
     filetime_int_to_hex_le,

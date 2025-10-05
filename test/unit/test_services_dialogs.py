@@ -3,7 +3,7 @@
 Covers multi-section parsing and roundtrip. Expected: categories and their
 entries are preserved exactly through export/import.
 """
-from far2l_history.services.dialogs import DialogsHistory
+from far_history_toolset.services.dialogs import DialogsHistory
 
 # Two small subsections, each with 2 entries
 HX_A0 = "0028c8515035dc01"

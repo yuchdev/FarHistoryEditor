@@ -26,9 +26,9 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-from far2l_history.core.hst_lexer import detect_header
-from far2l_history.core.errors import UnknownHeaderError, ParseError, SchemaError, RoundtripError
-from far2l_history.services import get_service_for_header
+from far_history_toolset.core.hst_lexer import detect_header
+from far_history_toolset.core.errors import UnknownHeaderError, ParseError, SchemaError, RoundtripError
+from far_history_toolset.services import get_service_for_header
 
 
 def _read_text(path: str) -> str:

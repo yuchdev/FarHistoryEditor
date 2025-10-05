@@ -3,11 +3,11 @@ from __future__ import annotations
 
 from typing import List, Dict, Any
 
-from far2l_history.core import (
+from far_history_toolset.core import (
     extract_quoted_block,
     extract_simple_pair,
 )
-from far2l_history.services.base import HistoryFile
+from far_history_toolset.services.base import HistoryFile
 
 
 class CommandsHistory(HistoryFile):

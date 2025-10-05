@@ -1,4 +1,4 @@
-from far2l_history.services.folders import FoldersHistory
+from far_history_toolset.services.folders import FoldersHistory
 
 HX0 = "0028c8515035dc01"
 HX1 = "80be60525035dc01"

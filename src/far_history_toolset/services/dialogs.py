@@ -4,8 +4,8 @@ from __future__ import annotations
 import re
 from typing import Dict, Any, List, Tuple
 
-from far2l_history.core import extract_quoted_block, extract_simple_pair
-from far2l_history.services.base import HistoryFile
+from far_history_toolset.core import extract_quoted_block, extract_simple_pair
+from far_history_toolset.services.base import HistoryFile
 
 
 _SECTION_RE = re.compile(r"^\[SavedDialogHistory/([^\]]+)\]\s*$", re.MULTILINE)

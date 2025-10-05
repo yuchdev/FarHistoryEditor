@@ -3,7 +3,7 @@
 Covers quoted block extraction, simple pairs, and header detection.
 Expected: functions correctly parse and remove keys while returning remainders.
 """
-from far2l_history.core.hst_lexer import extract_quoted_block, extract_simple_pair, detect_header
+from far_history_toolset.core.hst_lexer import extract_quoted_block, extract_simple_pair, detect_header
 
 def test_extract_quoted_block_with_trailing_quote_and_newline():
     """It should extract Extras quoted value and remove it from the remainder."""

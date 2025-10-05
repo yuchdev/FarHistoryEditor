@@ -4,7 +4,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import List, Tuple
 
-from far2l_history.core import (
+from far_history_toolset.core import (
     filetime_hex_to_int_le,
     filetime_int_to_hex_le,
     filetime_int_to_iso,
@@ -115,7 +115,7 @@ class LinesTypesTimesHistory(HistoryFile):
         :raises ValueError: If input is malformed (errors propagate from helpers).
         """
         # Local imports to avoid circular dependency at module import order.
-        from far2l_history.core import extract_quoted_block, extract_simple_pair
+        from far_history_toolset.core import extract_quoted_block, extract_simple_pair
         from typing import List, Dict, Any
 
         lines_raw, rest = extract_quoted_block(text, "Lines")

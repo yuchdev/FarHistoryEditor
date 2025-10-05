@@ -4,8 +4,8 @@ Builds sample .hst texts for all supported types and verifies that detect_header
 and service dispatch result in a lossless export/import roundtrip.
 Expected: rebuilt text is byte-for-byte equal to the original input.
 """
-from far2l_history.core.hst_lexer import detect_header
-from far2l_history.services import get_service_for_header
+from far_history_toolset.core.hst_lexer import detect_header
+from far_history_toolset.services import get_service_for_header
 
 HX0 = "0028c8515035dc01"
 HX1 = "80be60525035dc01"

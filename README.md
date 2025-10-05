@@ -54,7 +54,7 @@ pip install -e .
 This exposes the CLI `farhistory` (see usage below). You can also run the module in-place:
 
 ```bash
-python -m far2l_history.cli.main --help
+python -m far_history_toolset.cli.main --help
 ```
 
 ---
@@ -255,8 +255,8 @@ The importer rebuilds the `.hst` and:
 
 ```python
 from pathlib import Path
-from far2l_history.core.hst_lexer import detect_header
-from far2l_history.services import get_service_for_header
+from far_history_toolset.core.hst_lexer import detect_header
+from far_history_toolset.services import get_service_for_header
 
 hst_text = Path("~/.config/far2l/history/commands.hst").expanduser().read_text(encoding="utf-8")
 header = detect_header(hst_text)

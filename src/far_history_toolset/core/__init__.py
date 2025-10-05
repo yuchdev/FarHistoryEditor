@@ -8,8 +8,8 @@ This package exposes:
 - Typed JSON models for service interfaces (models.py)
 - Error types (errors.py)
 """
-from far2l_history.core.errors import ParseError, SchemaError, RoundtripError, UnknownHeaderError
-from far2l_history.core.filetime import (
+from far_history_toolset.core.errors import ParseError, SchemaError, RoundtripError, UnknownHeaderError
+from far_history_toolset.core.filetime import (
     FILETIME_EPOCH,
     filetime_hex_to_int_le,
     filetime_int_to_hex_le,
@@ -17,9 +17,9 @@ from far2l_history.core.filetime import (
     iso_to_filetime_int,
     now_filetime_int,
 )
-from far2l_history.core.newline_codec import smart_split_multiline, encode_literal_backslash_n
-from far2l_history.core.hst_lexer import extract_quoted_block, extract_simple_pair, detect_header
-from far2l_history.core import models
+from far_history_toolset.core.newline_codec import smart_split_multiline, encode_literal_backslash_n
+from far_history_toolset.core.hst_lexer import extract_quoted_block, extract_simple_pair, detect_header
+from far_history_toolset.core import models
 
 __all__ = [
     # errors

@@ -3,11 +3,11 @@ from __future__ import annotations
 
 from typing import Dict, Type
 
-from far2l_history.services.base import HistoryFile
-from far2l_history.services.commands import CommandsHistory
-from far2l_history.services.dialogs import DialogsHistory
-from far2l_history.services.folders import FoldersHistory
-from far2l_history.services.view import ViewHistory
+from far_history_toolset.services.base import HistoryFile
+from far_history_toolset.services.commands import CommandsHistory
+from far_history_toolset.services.dialogs import DialogsHistory
+from far_history_toolset.services.folders import FoldersHistory
+from far_history_toolset.services.view import ViewHistory
 
 
 REGISTRY: Dict[str, Type[HistoryFile]] = {

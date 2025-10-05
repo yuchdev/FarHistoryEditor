@@ -1,6 +1,6 @@
 # test/integration/test_roundtrip_folders.py
-from far2l_history.core.hst_lexer import detect_header
-from far2l_history.services import get_service_for_header
+from far_history_toolset.core.hst_lexer import detect_header
+from far_history_toolset.services import get_service_for_header
 
 HX0 = "0028c8515035dc01"
 HX1 = "80be60525035dc01"

@@ -3,7 +3,7 @@
 Ensures that encoded literal backslash-n sequences are normalized correctly.
 Expected: splitting and joining behave predictably.
 """
-from far2l_history.core.newline_codec import smart_split_multiline, encode_literal_backslash_n
+from far_history_toolset.core.newline_codec import smart_split_multiline, encode_literal_backslash_n
 
 def test_smart_split_basic():
     """A simple '\\n'-encoded list should split into three items."""

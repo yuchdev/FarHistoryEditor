@@ -1,7 +1,7 @@
 """[SavedViewHistory] (view.hst) exporter/importer."""
 from __future__ import annotations
 
-from far2l_history.services.base import LinesTypesTimesHistory
+from far_history_toolset.services.base import LinesTypesTimesHistory
 
 
 class ViewHistory(LinesTypesTimesHistory):

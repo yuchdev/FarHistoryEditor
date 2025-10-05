@@ -3,7 +3,7 @@
 Covers export shape and roundtrip for view history. Expected: paths, types,
 position parsed and serialization is identical to input.
 """
-from far2l_history.services.view import ViewHistory
+from far_history_toolset.services.view import ViewHistory
 
 HX0 = "0028c8515035dc01"
 HX1 = "80be60525035dc01"

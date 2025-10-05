@@ -4,8 +4,8 @@ Verifies that exporting and then importing produces identical text and that
 basic structural properties of the exported dict are correct.
 Expected: exact byte-for-byte equality and consistent metadata.
 """
-from far2l_history.core.hst_lexer import detect_header
-from far2l_history.services import get_service_for_header
+from far_history_toolset.core.hst_lexer import detect_header
+from far_history_toolset.services import get_service_for_header
 
 # FILETIME hex for 2025-10-04T17:00:00..+0/1/2s
 HX0 = "0028c8515035dc01"
@@ -14,7 +14,7 @@ HX2 = "0055f9525035dc01"
 
 def _mock_commands_hst() -> str:
     extras_val = r"/Users/atatat/.config/far2l/history\n/Users/atatat/Projects\n/home/atatat/Downloads"
-    lines_val = r"pwd | pbcopy\npython3 far2l_history export\npython3 far2l_history import"
+    lines_val = r"pwd | pbcopy\npython3 far_history_toolset export\npython3 far_history_toolset import"
     times_line = " ".join([HX0, HX1, HX2])
     return (
         "[SavedHistory]\n"
