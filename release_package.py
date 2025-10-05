@@ -8,41 +8,42 @@ import json
 from subprocess import run
 from configparser import ConfigParser
 
-cfg = ConfigParser()
-cfg.read(filenames=['setup.cfg'])
-VERSION = cfg.get('metadata', 'version')
+from setup import get_package_info
+
+#
+VERSION = get_package_info()['version']
+
+# Package-wide name with underscore (wheel filename)
+PACKAGE_NAME = get_package_info()['name']
+
+# Name with dash (pip name, URL, S3 bucket)
+PACKAGE_NAME_DASH = get_package_info()['name_dash']
 
 # Home dir
 HOME = pathlib.Path.home()
 
-# Name with underscore (wheel filename)
-PACKAGE_NAME = cfg.get('metadata', 'name')
-
-# Name with dash (pip name, URL, S3 bucket)
-PACKAGE_NAME_DASH = PACKAGE_NAME.replace('_', '-')
-
-PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__))))
+PROJECT_DIR = os.path.abspath(str(os.path.join(os.path.dirname(os.path.realpath(__file__)))))
 PYTHON = "python3"
 PIP = "pip3"
 
 
 def is_linux():
     """
-    :return: True if system is Linux, False otherwise
+    :return: True if the system is Linux, False otherwise
     """
     return platform.system() == 'Linux'
 
 
 def is_macos():
     """
-    :return: True if system is MacOS, False otherwise
+    :return: True if the system is MacOS, False otherwise
     """
     return platform.system() == 'Darwin'
 
 
 def is_windows():
     """
-    :return: True if system is Windows, False otherwise
+    :return: True if the system is Windows, False otherwise
     """
     return platform.system() == 'Windows'
 
